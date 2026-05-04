@@ -1,48 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My DevOps Project</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0f172a;
+    color: #fff;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    background: rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+}
+
+nav h2 {
+    color: #38bdf8;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sections */
+section {
+    padding: 60px 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #38bdf8;
+}
+
+/* About */
+.about p {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Skills */
+.skills {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: #1e293b;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+/* Projects */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project {
+    background: #1e293b;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Contact */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact input, .contact textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 10px;
+    border: none;
+    background: #38bdf8;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+}
+
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>🚀 My DevOps Project</h1>
-    <p>Deployed using Docker & Jenkins</p>
-</header>
-
+<!-- Navbar -->
 <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+    <h2>MyPortfolio</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
 
-<section class="hero">
-    <h2>Welcome to My Website</h2>
-    <p>This is a simple static website deployed using CI/CD pipeline.</p>
-    <button>Explore</button>
-</section>
-
-<section class="cards">
-    <div class="card">
-        <h3>💻 Docker</h3>
-        <p>Containerization made easy.</p>
-    </div>
-    <div class="card">
-        <h3>⚙️ Jenkins</h3>
-        <p>Automated CI/CD pipelines.</p>
-    </div>
-    <div class="card">
-        <h3>☁️ AWS</h3>
-        <p>Cloud deployment and scaling.</p>
+<!-- Hero -->
+<section class="hero" id="home">
+    <div>
+        <h1>Hi, I'm <span>piyush patil</span></h1>
+        <p>DevOps Engineer | Cloud Enthusiast | Developer</p>
+        <button onclick="document.getElementById('contact').scrollIntoView()">Hire Me</button>
     </div>
 </section>
 
+<!-- About -->
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate DevOps engineer skilled in Docker, Jenkins, AWS, and automation.
+        I build scalable and efficient systems using modern DevOps practices.
+    </p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">Docker</div>
+        <div class="skill">Jenkins</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Linux</div>
+        <div class="skill">Git & GitHub</div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>CI/CD Pipeline</h3>
+            <p>Automated deployment using Jenkins & Docker.</p>
+        </div>
+        <div class="project">
+            <h3>Cloud Deployment</h3>
+            <p>Hosted apps on AWS EC2 with Nginx.</p>
+        </div>
+        <div class="project">
+            <h3>Monitoring System</h3>
+            <p>Setup monitoring using Prometheus & Grafana.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Email">
+        <textarea rows="4" placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<!-- Footer -->
 <footer>
-    <p>© 2026 My DevOps Project | Made by You</p>
+    <p>© 2026 Your Name | DevOps Portfolio</p>
 </footer>
 
 </body>
